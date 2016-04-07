@@ -1,0 +1,27 @@
+<script type="text/x-red" data-template-name="hold">
+  <div class="form-row">
+      <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+      <input type="text" id="node-input-name" placeholder="Name">
+  </div>
+</script>
+
+<script type="text/x-red" data-help-name="hold">
+    <p>A node that stores a message and emits it when it is triggered.</p>
+    <p><b>Note</b>: to trigger set msg.trigger to true.</p>
+</script>
+
+<script type="text/javascript">
+    RED.nodes.registerType('hold',{
+        category: 'storage',
+        defaults: {
+            name: {value:""}
+        },
+        inputs:1,
+        outputs:1,
+        icon: "hold.png",
+        color:"#feb171",
+        label: function() {
+            return this.name||this.topic||"hold";
+        }
+    });
+</script>
