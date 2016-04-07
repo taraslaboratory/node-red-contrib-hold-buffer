@@ -1,6 +1,6 @@
 {
   "name": "node-red-node-hold",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "A node-red node which stores a message and emits it once it gets triggered",
   "dependencies": {},
   "keywords": [
