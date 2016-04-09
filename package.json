@@ -1,5 +1,5 @@
 {
-  "name": "node-red-node-hold",
+  "name": "node-red-contrib-hold",
   "version": "1.0.0",
   "description": "A node-red node which stores a message and emits it once it gets triggered",
   "dependencies": {},
@@ -13,12 +13,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/rnplus/node-red-node-hold.git"
+    "url": "git+https://github.com/rnplus/node-red-contrib-hold.git"
   },
   "author": "Renze Nicolai",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/rnplus/node-red-node-hold/issues"
+    "url": "https://github.com/rnplus/node-red-contrib-hold/issues"
   },
-  "homepage": "https://github.com/rnplus/node-red-node-hold#readme"
+  "homepage": "https://github.com/rnplus/node-red-contrib-hold#readme"
 }
