@@ -1,24 +1,24 @@
 {
-  "name": "node-red-contrib-hold",
+  "name": "node-red-contrib-hold-buffer",
   "version": "1.0.0",
-  "description": "A node-red node which stores a message and emits it once it gets triggered",
+  "description": "A node-red node which stores a incoming messages in buffer and emits it once it gets triggered",
   "dependencies": {},
   "keywords": [
     "node-red"
   ],
   "node-red": {
     "nodes": {
-      "hold": "hold/hold.js"
+      "hold": "hold-buffer/hold-buffer.js"
     }
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/rnplus/node-red-contrib-hold.git"
+    "url": "git+https://github.com/taraslaboratory/node-red-contrib-hold-buffer"
   },
-  "author": "Renze Nicolai",
+  "author": "Taras",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/rnplus/node-red-contrib-hold/issues"
+    "url": "https://github.com/taraslaboratory/node-red-contrib-hold-buffer/issues"
   },
-  "homepage": "https://github.com/rnplus/node-red-contrib-hold#readme"
+  "homepage": "https://github.com/taraslaboratory/node-red-contrib-hold-buffer#readme"
 }
