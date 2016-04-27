@@ -12,18 +12,20 @@ module.exports = function(RED) {
         this.on('input', function (msg) {
             if ((msg.trigger==null)||(msg.trigger!=true)) {
               node.context().storedmessage.push(msg);
-                this.node.status({fill: "green", shape: "dot", text: ""+ node.context().storedmessage.length +"items"});
+                node.status({fill: "green", shape: "dot", text: ""+ node.context().storedmessage.length +"items"});
             } else {
               if(node.context().storedmessage!=null && node.context().storedmessage.length>0) {
-                node.send(node.context().storedmessage.pop());
+                  if(1) {node.send(node.context().storedmessage.shift());}
+                  else {node.send(node.context().storedmessage.pop());}
+
                   if(node.context().storedmessage.length>0) {
-                      this.node.status({
+                      node.status({
                           fill: "green",
                           shape: "dot",
                           text: "" + node.context().storedmessage.length + "items"
                       });
                   } else {
-                      this.node.status({
+                      node.status({
                           fill: "green",
                           shape: "ring",
                           text: "" + node.context().storedmessage.length + "items"
@@ -32,7 +34,7 @@ module.exports = function(RED) {
                   }
               } else {
                 node.warn("Hold '"+n.name+"' triggered without message in buffer.");
-                  this.node.status({fill: "red", shape: "ring", text: ""+ node.context().storedmessage.length +"items"});
+                  node.status({fill: "red", shape: "ring", text: ""+ node.context().storedmessage.length +"items"});
               }
             }
         });
