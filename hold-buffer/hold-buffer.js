@@ -1,6 +1,6 @@
 module.exports = function(RED) {
     "use strict";
-    function holdNode(n) {
+    function holdNodeBuffer(n) {
         RED.nodes.createNode(this,n);
         var node = this;
         var msg = {};
@@ -12,7 +12,7 @@ module.exports = function(RED) {
             if ((msg.trigger==null)||(msg.trigger!=true)) {
               node.context().storedmessage.push(msg);
             } else {
-              if(node.context().storedmessage!=null && node.context().storedmessage.length()>0) {
+              if(node.context().storedmessage!=null && node.context().storedmessage.length>0) {
                 node.send(node.context().storedmessage.pop());
               } else {
                 node.warn("Hold '"+n.name+"' triggered without message in buffer.");
@@ -20,5 +20,5 @@ module.exports = function(RED) {
             }
         });
     }
-    RED.nodes.registerType("hold-buffer",holdNode);
+    RED.nodes.registerType("hold-buffer",holdNodeBuffer);
 }
