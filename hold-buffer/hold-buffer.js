@@ -10,8 +10,13 @@ module.exports = function(RED) {
         }
 
         this.on('input', function (msg) {
-            if ((msg.trigger==null)||(msg.trigger!=true)) {
-              node.context().storedmessage.push(msg);
+
+            if ((msg.trigger==null)&&(msg.trigger=="reset")) {
+                node.context().storedmessage =[];
+                node.status({fill: "green", shape: "ring", text: "0 items"});
+
+            } else if ( (msg.trigger==null) || ((msg.trigger!=true)&&(msg.trigger!="reset")) ) {
+                node.context().storedmessage.push(msg);
                 node.status({fill: "green", shape: "dot", text: ""+ node.context().storedmessage.length +"items"});
             } else {
               if(node.context().storedmessage!=null && node.context().storedmessage.length>0) {
