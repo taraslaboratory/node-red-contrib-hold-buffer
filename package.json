@@ -8,7 +8,7 @@
   ],
   "node-red": {
     "nodes": {
-      "hold": "hold-buffer/hold-buffer.js"
+      "hold-buffer": "hold-buffer/hold-buffer.js"
     }
   },
   "repository": {
